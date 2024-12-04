@@ -1,0 +1,53 @@
+<section class="page">
+	<h1>Swiper Web Component</h1>
+
+	<swiper-container slides-per-view="1" centered-slides="true" autoplay-delay="7500"
+		autoplay-disable-on-interaction="false" loop="true" hash-navigation-watch-state="true" pagination="true"
+		pagination-clickable="true" navigation="true">
+		<swiper-slide>
+			<div class="demo-slide">
+				<img src="/assets/img/oa-react.gif" alt="React demo gif">
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="demo-slide">
+				<img src="/assets/img/oa-svelte.gif" alt="Svelte demo gif">
+			</div>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="demo-slide">
+				<img src="/assets/img/oa-vue.gif" alt="Vue demo gif">
+			</div>
+		</swiper-slide>
+	</swiper-container>
+
+
+
+	<div id="instructions" class="mt-2">
+		<p>If you want to implement Swiper Web Component in Angular (current version 19) following the instructions, the
+			only thing you'll get is a headache:
+		</p>
+
+		<pre>
+ import &lcub; register &rcub; from 'swiper/element/bundle';
+ register();</pre>
+
+		<p>The only way to make it run, is to use:</p>
+
+		<pre>
+ import &lcub; CUSTOM_ELEMENTS_SCHEMA &rcub; from '&commat;angular/core';
+
+ &commat;Component(&lcub;
+   ...
+   schemas: &lsqb;CUSTOM_ELEMENTS_SCHEMA&rsqb;
+ &rcub;)
+</pre>
+
+		<p>Also you need to include in the <b>index.html</b> the Swiper bundle:</p>
+
+		<pre>
+ &lt;script src="https://cdn.jsdelivr.net/npm/swiper&commat;11/swiper-element-bundle.min.js"&gt;&lt;/script&gt;</pre>
+
+		<p>But no problem, just clone this repo and check the code.</p>
+	</div>
+</section>

@@ -1,0 +1,51 @@
+<section class="page">
+	<h1>OA Web Elements</h1>
+	<p>The first time I implemented my OA custom web elements/components with Angular was some time ago, just for fun. I
+		used the
+		"typical" instantiation:</p>
+	<pre>
+ loader = document.querySelector('oa-loader') as any
+ // and then try to use it
+ this.loader.show()
+</pre>
+	<p>But in recents versions of Angular that doesn't work. In last May or April I was invited to be part of a project
+		developed with Angular and Laravel, it was a team of 3 members so I decided to implement my web elements in a
+		professional way. In Angular it means a service, and that's how you'll find implemented it here.</p>
+	<p>As a service, you can access these web elements from every Angular component, no matter how nested it was. So
+		if you'd want to use them I recommend you to copy the service file: <b>oa.service.ts</b> and use it as
+		another
+		Angular injectable service:</p>
+
+	<pre>
+ import &lcub; OaService &rcub; from '../../oa.service';
+ ...
+ oa: OaService = inject(OaService)
+ ...
+ // then you can call from any method:
+ error(str: String): void &lcub;
+   this.oa.toast().error(str);
+ &rcub;</pre>
+
+	<p>Don't forget to add custom tags in the bottom of your <b>index.html</b>:</p>
+
+	<pre>
+ &lt;oa-loader&gt;&lt;/oa-loader&gt;
+ &lt;oa-dialogs&gt;&lt;/oa-dialogs&gt;
+ &lt;oa-toast&gt;&lt;/oa-toast&gt;</pre>
+
+	<p>Easy, clone this project and check the code. But wait, <b>why is so important to use my custom web
+			components</b>? Or
+		<b>why I have a lot of repos with samples of their implementation</b>?<br>Easy again, because when you develop
+		many projects jumping from one technology to another (e.g.: Alpine, React, Svelte, Vue or pure JS) reading
+		documentation to deal with dialogs, toasts, etc. takes some precious time. But when you use the same library for
+		each of them, you're acting in a very efficient way; you're more productive because you already know how they
+		work. Even installing the resources is a simple and fast task.
+	</p>
+
+	<p>To finish, some examples:</p>
+	<div>
+		<button class="button" (click)="demoLoader()">Show loader</button>&nbsp;
+		<button class="button button-outline" (click)="demoDialog()">Show dialog</button>&nbsp;
+		<button class="button" (click)="demoToast()">Show toast</button>
+	</div>
+</section>

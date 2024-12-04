@@ -1,0 +1,21 @@
+<header class='header'>
+	<span class='nav-heading nav-brand'>
+		<span logo></span>
+	</span>
+	<input type='checkbox' class='menu-toggle' id='menu-toggle'>
+	<nav class='header'>
+		<ul>
+			@for (i of links; track i.path){
+			<li>
+				<a routerLink={{i.path}} routerLinkActive="active" [routerLinkActiveOptions]={exact:true}
+					title={{i.label}} (click)="toggleMenu($event)">{{i.label}}</a>
+			</li>
+			}
+		</ul>
+	</nav>
+	<label for='menu-toggle' class='menu-nav-toggle'>
+		<span></span>
+	</label>
+
+
+</header>

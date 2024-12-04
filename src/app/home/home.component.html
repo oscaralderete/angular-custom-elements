@@ -1,0 +1,29 @@
+<section class="page">
+	<h1>Angular & Custom Elements</h1>
+	<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements"
+			target="_blank">Custom web elements</a> are powerful features of modern web development because they are
+		framework-agnostic. Which means that you can use them in -basically- the same way no matter what framework are
+		you using.</p>
+	<p>Time ago I developed a very useful set of UI tools: a <b>loader</b>, <b>dialog</b> and <b>toast</b> based on
+		<i>custom web
+			elements</i>, and there are samples about how to implement them with React, Svelte and Vue.
+	</p>
+	<ol>
+		@for (i of links; track i.id){
+		<li>
+			<a href={{i.url}} target="_blank">OA custom elements with {{i.label}}</a> &raquo;
+		</li>
+		}
+	</ol>
+	<p>That's fine, but what about <b>Angular</b>? Well the Angular implementation was on hold until I revamped my
+		website <a href="https://oscaralderete.com" target="_blank">https://oscaralderete.com</a>, and that happened
+		last month!</p>
+	<p>Also, another reason for the delay was the way Angular process custom web elements, it's a little bit tricky. But
+		because my website has a image slider, I decided to use Swiper because it has a cool web element version, ideal
+		for Angular. At the end it was to kill two birds with one stone: Swiper slider and my OA user interface toolkit
+		based on web elements.</p>
+
+	<p><b>PS:</b> There's a running version of this repo: <a
+			href="https://inmuebles.oscaralderete.com/">https://inmuebles.oscaralderete.com/</a>. As always, if you
+		found this resource useful give me a Github star 👍👍👍.</p>
+</section>
